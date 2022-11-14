@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table with lamp and mug</title>
+
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-camera position="0 4 8"></a-camera>
+        <a-assets>
+            <a-asset-item id="table" src="models/table.glb"></a-asset-item>
+            <a-asset-item id="mug" src="models/mug.glb"></a-asset-item>
+            <a-asset-item id="lamp" src="models/lamp.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity light="type: ambient; color: #EEE; intensity:0.7;" position="5 10 8"></a-entity>
+
+        <a-entity>
+            <a-entity light="type: directional; castShadow:true; color: #EEE; intensity:1;" position="5 10 8"></a-entity>
+        </a-entity>
+
+        <a-circle radius="100" position="0 0 0" rotation="-90 0 0" shadow="receive:true"></a-circle>
+
+        <a-entity>
+            <a-entity position="0 0 0" rotation="0 0 0" scale="0.2 0.2 0.2" gltf-model="#table" color="white" shadow="cast:true"></a-entity>
+        </a-entity>
+
+        <a-entity>
+            <a-entity position="0 0 0" rotation="0 0 0" scale="0.2 0.2 0.2" gltf-model="#lamp" color="white" shadow="cast:true"></a-entity>
+        </a-entity>
+
+        <a-entity>
+            <a-entity position="0 0 0" rotation="0 0 0" scale="0.2 0.2 0.2" gltf-model="#mug" color="white" shadow="cast:true"></a-entity>
+        </a-entity>
+    </a-scene>
+</body>
+</html>
